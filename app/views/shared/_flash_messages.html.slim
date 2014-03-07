@@ -1,0 +1,6 @@
+- flash.each do |key, message|
+  - correct_key = get_correct_key_goddammit_responder_you_suck key
+  div class="alert alert-#{correct_key} alert-dismissable"
+    button.close data-dismiss="alert" type="button" &times;
+    strong #{correct_key.capitalize}:
+    |  #{message}

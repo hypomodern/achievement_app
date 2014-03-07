@@ -1,0 +1,10 @@
+development: &development
+  adapter: postgresql
+  encoding: unicode
+  database: achievements_development
+  pool: 5
+  password:
+
+test:
+  <<: *development
+  database: achievements_test
