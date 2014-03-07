@@ -24,6 +24,7 @@ module Admin
     end
 
     def update
+      # render text: params.inspect and return
       @achievement = Achievement.find params[:id]
       @achievement = AchievementBuilder.update @achievement, params[:achievement]
       respond_with :admin, @achievement

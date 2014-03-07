@@ -1,0 +1,9 @@
+h2 Edit #{@achievement.name}
+
+= render 'form', achievement: @achievement, path: admin_achievement_path(@achievement)
+
+.row
+  .well
+    = link_to "&laquo; View".html_safe, admin_achievement_path(@achievement), class: 'btn btn-primary'
+    '
+    = link_to "Delete", admin_achievement_path(@achievement), class: 'btn btn-danger', method: :delete

@@ -9,11 +9,11 @@
 #  image_url            :string(255)
 #  tags                 :string(255)      default([]), is an Array
 #  secret               :boolean          default(FALSE)
-#  won_at               :boolean          default(FALSE)
 #  created_at           :datetime
 #  updated_at           :datetime
 #  chapter_id           :integer
 #  won_by               :string(255)
+#  won_at               :datetime
 #
 # Indexes
 #

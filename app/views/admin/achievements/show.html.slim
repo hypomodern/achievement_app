@@ -1,0 +1,20 @@
+h2 #{@achievement.chapter.name} &ndash; #{@achievement.name}
+
+- if @achievement.won_at
+  h4 Won by #{@achievement.won_by} on #{@achievement.won_at.to_s(:ymd)}
+
+table.table
+  tr
+    th Censored
+    th Full
+    th Secret?
+  tr
+    td #{@achievement.censored_description || ''}
+    td = @achievement.full_description
+    td = @achievement.secret? ? 'Yes' : 'No'
+
+.row
+  .well
+    = link_to "&laquo; Admin".html_safe, admin_path, class: 'btn btn-primary'
+    '
+    = link_to "Edit", edit_admin_achievement_path(@achievement), class: 'btn btn-warning'

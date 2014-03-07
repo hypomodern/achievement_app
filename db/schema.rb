@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307054322) do
+ActiveRecord::Schema.define(version: 20140307150428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 20140307054322) do
     t.string   "image_url"
     t.string   "tags",                 default: [],    array: true
     t.boolean  "secret",               default: false
-    t.boolean  "won_at",               default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "chapter_id"
     t.string   "won_by"
+    t.datetime "won_at"
   end
 
   add_index "achievements", ["chapter_id"], name: "index_achievements_on_chapter_id", using: :btree

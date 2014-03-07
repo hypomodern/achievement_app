@@ -1,1 +1,17 @@
-h2 Landing
+- @chapters.each do |chapter|
+
+  h4 #{chapter.name}
+
+  table.table.table-hover.table-achievements
+    tr
+      th Name
+      th.description About
+      th.won-by Won By
+      th.admin Admin
+
+    - chapter.achievements.each do |ach|
+      tr class="#{ach.won_at ? 'success' : ''}"
+        td = ach.name
+        td.description = public_description_for_achievement(ach)
+        td.won-by = ach.won_by
+        td.admin = link_to 'Edit', edit_admin_achievement_path(ach)
