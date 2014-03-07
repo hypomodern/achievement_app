@@ -9,12 +9,10 @@ h2 #{@chapter.name}
     - @chapter.achievements.each do |ach|
       li = link_to ach.name, edit_admin_achievement_path(ach)
 
-= link_to "New Achievement", new_admin_achievement_path
-'
-' &middot;
-'
-= link_to "Edit", edit_admin_chapter_path(@chapter)
-'
-' &middot;
-'
-= link_to "Admin", admin_path
+.row
+  .well
+    = link_to "Admin", admin_path, class: 'btn btn-primary'
+    '
+    = link_to "Edit", edit_admin_chapter_path(@chapter), class: 'btn btn-warning'
+    '
+    = link_to "New Achievement", new_admin_achievement_path, class: 'btn btn-default'

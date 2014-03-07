@@ -1,0 +1,43 @@
+= form_for achievement, url: path, html: { class: 'form-horizontal' } do |f|
+  .form-group
+    = f.label :chapter, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.select :chapter, Chapter.all.collect {|c| [ c.name, c.id ] }, class: 'form-control'
+
+  .form-group
+    = f.label :name, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :name, class: 'form-control', placeholder: 'Name', required: true
+
+  .form-group
+    = f.label :censored_description, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :censored_description, class: 'form-control'
+
+  .form-group
+    = f.label :full_description, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :full_description, class: 'form-control', required: true
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      .checkbox
+        = f.label :secret
+          = f.check_box :secret
+          | Secret?
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      .checkbox
+        = f.label :won_at
+          = f.check_box :won_at
+          | Won?
+
+  .form-group
+    = f.label :won_by, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :won_by, class: 'form-control'
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit class: 'btn btn-success'

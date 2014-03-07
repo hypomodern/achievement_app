@@ -33,5 +33,6 @@ module Admin
       @chapter.destroy
       redirect_to admin_path
     end
+
   end
 end

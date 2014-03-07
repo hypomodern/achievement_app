@@ -1,11 +1,5 @@
 h2 Admin
 
-.well
-  = link_to 'achievements', admin_achievements_path
-  '  &middot;
-  '
-  = link_to 'chapters', admin_chapters_path
-
 .row
   .col-md-6
     h4 Chapters
@@ -28,8 +22,7 @@ h2 Admin
       ul
         - @achievements.each do |achievement|
           li
-            #{achievement.chapter.name}:
-            '
+            ' #{achievement.chapter.name} &ndash;
             = link_to achievement.name, edit_admin_achievement_path(achievement)
 
     = link_to "New Achievement", new_admin_achievement_path
