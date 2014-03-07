@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :achievements
     resources :chapters
   end
-  get '/admin' => 'admin#index'
+  get '/admin' => 'admin#index', as: :admin
 
 end

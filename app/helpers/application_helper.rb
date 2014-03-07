@@ -1,8 +1,8 @@
 module ApplicationHelper
   def get_correct_key_goddammit_responder_you_suck key
-    if key == :notice
+    if key.to_s == 'notice'
       :success
-    elsif key == :alert
+    elsif key.to_s == 'alert'
       :danger
     else
       key

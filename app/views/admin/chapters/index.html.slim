@@ -1,0 +1,10 @@
+h2 Chapters
+
+- if @chapters.empty?
+  .well None!
+- else
+  ul
+    - @chapters.each do |chapter|
+      li = link_to chapter.name, edit_admin_chapter_path(chapter)
+
+= link_to "New Chapter", new_admin_chapter_path

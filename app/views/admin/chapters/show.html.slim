@@ -1,0 +1,20 @@
+h2 #{@chapter.name}
+
+- if @chapter.achievements.empty?
+  .well
+    ' No achievements!
+
+- else
+  ul
+    - @chapter.achievements.each do |ach|
+      li = link_to ach.name, edit_admin_achievement_path(ach)
+
+= link_to "New Achievement", new_admin_achievement_path
+'
+' &middot;
+'
+= link_to "Edit", edit_admin_chapter_path(@chapter)
+'
+' &middot;
+'
+= link_to "Admin", admin_path

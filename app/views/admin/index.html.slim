@@ -5,3 +5,31 @@ h2 Admin
   '  &middot;
   '
   = link_to 'chapters', admin_chapters_path
+
+.row
+  .col-md-6
+    h4 Chapters
+
+    - if @chapters.empty?
+      .well None!
+    - else
+      ul
+        - @chapters.each do |chapter|
+          li = link_to chapter.name, edit_admin_chapter_path(chapter)
+
+    = link_to "New Chapter", new_admin_chapter_path
+
+  .col-md-6
+    h4 Achievements
+
+    - if @achievements.empty?
+      .well None!
+    - else
+      ul
+        - @achievements.each do |achievement|
+          li
+            #{achievement.chapter.name}:
+            '
+            = link_to achievement.name, edit_admin_achievement_path(achievement)
+
+    = link_to "New Achievement", new_admin_achievement_path

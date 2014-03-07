@@ -13,12 +13,14 @@
 #  created_at           :datetime
 #  updated_at           :datetime
 #  chapter_id           :integer
+#  won_by               :string(255)
 #
 # Indexes
 #
 #  index_achievements_on_chapter_id  (chapter_id)
 #  index_achievements_on_tags        (tags)
 #
+
 class Achievement < ActiveRecord::Base
   validates :name, :full_description, :chapter, presence: true
 

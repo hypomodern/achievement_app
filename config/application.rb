@@ -25,6 +25,12 @@ module Achievements
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.eager_load_paths += [
+      # "#{config.root}/app/jobs",
+      "#{config.root}/app/responders",
+      # "#{config.root}/app/services"
+    ]
+
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       g.orm :active_record
