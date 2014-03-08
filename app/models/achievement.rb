@@ -25,4 +25,6 @@ class Achievement < ActiveRecord::Base
   validates :name, :full_description, :chapter, presence: true
 
   belongs_to :chapter
+
+  default_scope { order(:name) }
 end

@@ -4,6 +4,6 @@ h2 Edit #{@chapter.name}
 
 .row
   .well
-    = link_to "Nevermind", admin_path, class: 'btn btn-primary'
+    = link_to "Nevermind", admin_chapter_path(@chapter), class: 'btn btn-primary'
     '
     = link_to "Delete", admin_chapter_path(@chapter), class: 'btn btn-danger', method: :delete

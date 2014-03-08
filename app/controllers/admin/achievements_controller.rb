@@ -12,7 +12,7 @@ module Admin
     def create
       # render text: params.inspect and return
       @achievement = AchievementBuilder.build params[:achievement]
-      respond_with :admin, @achievement
+      redirect_to admin_chapter_path(@achievement.chapter)
     end
 
     def show

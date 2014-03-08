@@ -5,9 +5,11 @@ module AchievementsHelper
     if won
       achievement.full_description
     elsif achievement.secret?
-      "It's a secret!"
+      "[ A SECRET MAN WAS NOT MEANT TO KNOW ]"
+    elsif achievement.censored_description.blank?
+      achievement.full_description
     else
-      achievement.censored_description || achievement.full_description
+      achievement.censored_description
     end
   end
 

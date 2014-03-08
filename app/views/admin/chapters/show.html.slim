@@ -5,9 +5,22 @@ h2 #{@chapter.name}
     ' No achievements!
 
 - else
-  ul
-    - @chapter.achievements.each do |ach|
-      li = link_to ach.name, edit_admin_achievement_path(ach)
+  table.table.table-striped
+    thead
+      tr
+        th Name
+        th Censored
+        th Full
+        th Secret?
+        th Won?
+    tbody
+      - @chapter.achievements.each do |ach|
+        tr
+          td = link_to ach.name, edit_admin_achievement_path(ach)
+          td = ach.censored_description
+          td = ach.full_description
+          td = ach.secret? ? 'Y' : 'N'
+          td = ach.won_at ? 'Y' : 'N'
 
 .row
   .well
