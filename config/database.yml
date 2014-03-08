@@ -8,3 +8,7 @@ development: &development
 test:
   <<: *development
   database: achievements_test
+
+production:
+  <<: *development
+  database: achievements_production

@@ -59,3 +59,7 @@ group :test do
   gem 'email_spec'
 end
 
+# Heroku
+gem 'rails_12factor', group: :production
+ruby "2.0.0"
+
