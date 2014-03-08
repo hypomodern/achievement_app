@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  http_basic_authenticate_with name: "mhw", password: "foo-bar-rex"
+  http_basic_authenticate_with name: "mhw", password: ENV['ADMIN_PASSWORD']
 
   def index
     @chapters     = Chapter.all

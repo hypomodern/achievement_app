@@ -12,7 +12,7 @@ Achievement.create!([
   {id: 57, name: "Black Pharaoh", censored_description: "", full_description: "Shut down the Brotherhood on two continents", image_url: nil, tags: [], secret: true, created_at: "2014-03-08 04:18:14", updated_at: "2014-03-08 04:18:14", chapter_id: 4, won_by: "", won_at: nil},
   {id: 58, name: "Bloated Woman", censored_description: "", full_description: "Shut down the Occult Triad in two cities", image_url: nil, tags: [], secret: true, created_at: "2014-03-08 04:18:56", updated_at: "2014-03-08 04:18:56", chapter_id: 4, won_by: "", won_at: nil},
   {id: 26, name: "Bloodhounds", censored_description: "Find all of the pre-determined clues in a chapter", full_description: "You've found everything I prepared for you, in one chapter!", image_url: nil, tags: [], secret: false, created_at: "2014-03-08 03:55:14", updated_at: "2014-03-08 04:36:24", chapter_id: 6, won_by: "", won_at: nil},
-  {id: 8, name: "Bloodhounds of Arkham", censored_description: "Follow all of Pierce's leads in Arkham", full_description: "You've followed up on everything Pierce gave you", image_url: nil, tags: [], secret: false, created_at: "2014-03-08 02:55:19", updated_at: "2014-03-08 02:55:19", chapter_id: 1, won_by: "", won_at: nil},
+  {id: 8, name: "Bloodhounds of Arkham", censored_description: "Follow all of Pierce's leads in Arkham", full_description: "You've followed up on everything Pierce gave you", image_url: nil, tags: [], secret: false, created_at: "2014-03-08 02:55:19", updated_at: "2014-03-08 15:23:32", chapter_id: 1, won_by: "Teamwork", won_at: "2014-03-08 15:23:32"},
   {id: 56, name: "Bloody Tongue", censored_description: "", full_description: "Shut down the Bloody Tongue on two continents", image_url: nil, tags: [], secret: true, created_at: "2014-03-08 04:17:39", updated_at: "2014-03-08 04:17:39", chapter_id: 4, won_by: "", won_at: nil},
   {id: 42, name: "Cadfael", censored_description: "", full_description: "Made 10 Investigation Spends", image_url: nil, tags: [], secret: false, created_at: "2014-03-08 04:07:14", updated_at: "2014-03-08 04:29:57", chapter_id: 6, won_by: "", won_at: nil},
   {id: 11, name: "Came Prepared", censored_description: "Bring everything Pierce asked for", full_description: "Gin, check. Smokes, check. Information on Kimble? Check.", image_url: nil, tags: [], secret: true, created_at: "2014-03-08 03:16:09", updated_at: "2014-03-08 03:17:15", chapter_id: 2, won_by: "", won_at: nil},
@@ -79,7 +79,7 @@ Chapter.create!([
   {id: 1, name: "Spare the Rod: 1919", index: 0},
   {id: 2, name: "The God of Mitnal: 1924", index: 1},
   {id: 5, name: "Big Trouble in the Big Apple: 1925", index: 2},
-  {id: 7, name: "Action: 1924-1926", index: 3},
-  {id: 6, name: "Investigation: 1924-1926", index: 4},
-  {id: 4, name: "Miscellaneous: 1924 - 1926", index: 5}
+  {id: 7, name: "Action: 1924–1926", index: 3},
+  {id: 6, name: "Investigation: 1924–1926", index: 4},
+  {id: 4, name: "Miscellaneous: 1924–1926", index: 5}
 ])
