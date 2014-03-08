@@ -22,7 +22,7 @@
 #
 
 class Achievement < ActiveRecord::Base
-  validates :name, :full_description, :chapter, presence: true
+  validates :name, :full_description, :chapter_id, presence: true
 
   belongs_to :chapter
 
