@@ -25,6 +25,7 @@ gem 'responders'
 # database stuff
 gem 'pg'
 gem 'annotate'
+gem 'seed_dump'
 
 group :development do
   gem 'foreman'
