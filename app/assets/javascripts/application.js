@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+
+$(function() {
+
+  $('.sortable').sortable().bind('sortupdate', function(event, ui) {
+    var ids = $.map( $('.sortable li'), function(el) {
+      return el.dataset.id;
+    });
+    $.ajax( '/admin/chapters/reorder', {
+      data: { 'ids': ids }
+      , type: 'PUT'
+    });
+  });
+
+});

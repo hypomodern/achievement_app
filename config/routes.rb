@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :achievements
-    resources :chapters
+    resources :chapters do
+      collection do
+        put 'reorder' => 'chapters#reorder', as: :reorder
+      end
+    end
   end
   get '/admin' => 'admin#index', as: :admin
 

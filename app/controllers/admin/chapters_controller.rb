@@ -34,5 +34,10 @@ module Admin
       redirect_to admin_path
     end
 
+    def reorder
+      Chapter.reorder(params[:ids])
+      head 204
+    end
+
   end
 end

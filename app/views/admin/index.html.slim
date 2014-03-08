@@ -7,9 +7,10 @@ h2 Admin
     - if @chapters.empty?
       .well None!
     - else
-      ul
+      ul.sortable
         - @chapters.each do |chapter|
-          li = link_to chapter.name, edit_admin_chapter_path(chapter)
+          li data-id=chapter.id
+            = link_to chapter.name, edit_admin_chapter_path(chapter)
 
     = link_to "New Chapter", new_admin_chapter_path
 
