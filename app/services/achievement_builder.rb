@@ -5,12 +5,12 @@ class AchievementBuilder < Builder
   end
 
   def set_attributes
-    if params[:won_at].to_i == 1
+    mark_as_won = params.delete(:is_won).to_i
+    if mark_as_won == 1 && self.object.won_at.nil?
       params[:won_at] = Time.now
-    elsif params[:won_at].to_i == 0
+    elsif mark_as_won == 0
       params[:won_at] = nil
-    else
-      params.delete(:won_at)
+      params[:won_by] = nil
     end
 
     attrs = {
@@ -22,7 +22,7 @@ class AchievementBuilder < Builder
       chapter_id:           params[:chapter_id]
     }
 
-    attrs.merge!(won_at: params[:won_at]) if params[:won_at]
+    attrs.merge!(won_at: params[:won_at]) if params.has_key?(:won_at)
 
     self.object.attributes = attrs
   end

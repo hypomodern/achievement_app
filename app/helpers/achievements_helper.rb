@@ -1,8 +1,7 @@
 module AchievementsHelper
 
   def public_description_for_achievement achievement
-    won = achievement.won_at
-    if won
+    if achievement.won_at
       achievement.full_description
     elsif achievement.secret?
       "[ A SECRET MAN WAS NOT MEANT TO KNOW ]"

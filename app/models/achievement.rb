@@ -27,4 +27,8 @@ class Achievement < ActiveRecord::Base
   belongs_to :chapter
 
   default_scope { order(:name) }
+
+  def is_won
+    !!won_at
+  end
 end
