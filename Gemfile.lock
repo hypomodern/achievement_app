@@ -228,6 +228,7 @@ GEM
       activerecord
       activesupport
     sexp_processor (4.4.1)
+    simple_builder (1.0.0)
     slim (2.0.2)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
@@ -303,6 +304,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.0)
   seed_dump
+  simple_builder
   slim
   spring
   uglifier (>= 1.3.0)

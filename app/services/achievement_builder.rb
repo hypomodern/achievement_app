@@ -1,4 +1,4 @@
-class AchievementBuilder < Builder
+class AchievementBuilder < SimpleBuilder
 
   def new_instance
     Achievement.new

@@ -21,6 +21,7 @@ gem 'figaro', github: 'laserlemon/figaro'
 gem 'slim'
 gem 'unicorn'
 gem 'responders'
+gem 'simple_builder'
 
 # database stuff
 gem 'pg'

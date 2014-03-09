@@ -1,4 +1,4 @@
-class ChapterBuilder < Builder
+class ChapterBuilder < SimpleBuilder
 
   def new_instance
     Chapter.new
