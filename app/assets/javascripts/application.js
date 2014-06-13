@@ -28,4 +28,12 @@ $(function() {
     });
   });
 
+  $('#prop-modal').on('hidden.bs.modal', function(e) {
+    $('#prop-modal').removeData('bs.modal');
+  });
+
+  $('#achievement-modal').on('hidden.bs.modal', function(e) {
+    $('#achievement-modal').removeData('bs.modal');
+  });
+
 });

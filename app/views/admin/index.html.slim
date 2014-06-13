@@ -1,41 +1,19 @@
 h2 Admin
 
 .row
-  .col-md-6
+  .col-md-12
     h4 Chapters
 
     - if @chapters.empty?
       .well None!
     - else
-      ul.sortable
+      ul.sortable.nav.nav-pills.nav-stacked
         - @chapters.each do |chapter|
           li data-id=chapter.id
-            = link_to chapter.name, admin_chapter_path(chapter)
+            = link_to admin_chapter_path(chapter) do
+              span.pull-right
+                ' Achievements: #{chapter.achievements.count} Props: #{chapter.props.count}
+              = chapter.name
 
-    = link_to "New Chapter", new_admin_chapter_path
-
-    h4 Props
-
-    - if @props.empty?
-      .well None!
-    - else
-      ul
-        - @props.each do |prop|
-          li
-            = link_to prop.name, admin_prop_path(prop)
-
-    = link_to "New Prop", new_admin_prop_path
-
-  .col-md-6
-    h4 Achievements
-
-    - if @achievements.empty?
-      .well None!
-    - else
-      ul
-        - @achievements.each do |achievement|
-          li
-            ' #{achievement.chapter.name} &ndash;
-            = link_to achievement.name, edit_admin_achievement_path(achievement)
-
-    = link_to "New Achievement", new_admin_achievement_path
+    .well
+      = link_to "New Chapter", new_admin_chapter_path, class: "btn btn-primary"

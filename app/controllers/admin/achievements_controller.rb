@@ -30,6 +30,17 @@ module Admin
       respond_with :admin, @achievement
     end
 
+    def control
+      @achievement = Achievement.find params[:id]
+      render layout: false
+    end
+
+    def patch
+      @achievement = Achievement.find params[:id]
+      AchievementUpdater.update @achievement, params[:achievement]
+      redirect_to admin_chapter_path(@achievement.chapter)
+    end
+
     def destroy
       @achievement = Achievement.find params[:id]
       @achievement.destroy

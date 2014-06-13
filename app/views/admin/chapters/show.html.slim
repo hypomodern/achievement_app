@@ -15,6 +15,7 @@ h3 Achievements
         th Full
         th Secret?
         th Won?
+        th Admin
     tbody
       - @chapter.achievements.each do |ach|
         tr
@@ -23,6 +24,13 @@ h3 Achievements
           td = ach.full_description
           td = ach.secret? ? 'Y' : 'N'
           td = ach.won_at ? 'Y' : 'N'
+          td
+            a.btn.btn-default data-toggle="modal" data-target="#achievement-modal" data-keyboard="true" href="#{control_admin_achievement_path(ach)}" Admin
+
+#achievement-modal.modal.fade tabindex='-1'
+  .modal-dialog
+    .modal-content
+      ' Loading achievement...
 
 h3 Props
 
@@ -37,12 +45,22 @@ h3 Props
         th Name
         th Link
         th Found
+        th Owner
+        th Admin
     tbody
       - @chapter.props.each do |prop|
         tr
           td = link_to prop.name, edit_admin_prop_path(prop)
           td = link_to "Download link", prop.attached_file.url if prop.attached_file?
           td = prop.found ? prop.found_by : 'No'
+          td = prop.current_owner
+          td
+            a.btn.btn-default data-toggle="modal" data-target="#prop-modal" data-keyboard="true" href="#{prop_control_admin_prop_path(prop)}" Admin
+
+#prop-modal.modal.fade tabindex='-1'
+  .modal-dialog
+    .modal-content
+      ' Loading prop...
 
 .row
   .well

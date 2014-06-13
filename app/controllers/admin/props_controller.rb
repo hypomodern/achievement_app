@@ -32,6 +32,17 @@ module Admin
       respond_with :admin, @prop
     end
 
+    def control
+      @prop = Prop.find params[:id]
+      render layout: false
+    end
+
+    def patch
+      @prop = Prop.find params[:id]
+      PropUpdater.update @prop, params[:prop]
+      redirect_to admin_chapter_path(@prop.chapter)
+    end
+
     def destroy
       @prop = Prop.find params[:id]
       @prop.destroy
