@@ -1,5 +1,0 @@
-# Add application configuration variables here, as shown below.
-s3_bucket: "achievements-development"
-
-production:
-  s3_bucket: "achievements-production"
