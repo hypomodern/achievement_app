@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 
   def index
     @chapters     = Chapter.all
-    @achievements = Achievement.includes(:chapter).order("chapters.name").all
-    @props        = Prop.includes(:chapter).order("chapters.name").all
+    @achievements = Achievement.unscoped.includes(:chapter).order("chapters.name, achievements.name").all
+    @props        = Prop.unscoped.includes(:chapter).order("chapters.name, props.name").all
   end
 end
