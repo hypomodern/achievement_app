@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140308013914) do
+ActiveRecord::Schema.define(version: 20140611235049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,5 +37,21 @@ ActiveRecord::Schema.define(version: 20140308013914) do
     t.string  "name"
     t.integer "index"
   end
+
+  create_table "props", force: true do |t|
+    t.string   "attached_file"
+    t.string   "name"
+    t.string   "description"
+    t.string   "current_owner"
+    t.string   "found_by"
+    t.boolean  "found"
+    t.integer  "chapter_id"
+    t.string   "tags",          default: [], array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "props", ["chapter_id"], name: "index_props_on_chapter_id", using: :btree
+  add_index "props", ["tags"], name: "index_props_on_tags", using: :gin
 
 end

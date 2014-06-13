@@ -1,0 +1,9 @@
+h2 Edit #{@prop.name}
+
+= render 'form', prop: @prop, path: admin_prop_path(@prop)
+
+.row
+  .well
+    = link_to "&laquo; View".html_safe, admin_prop_path(@prop), class: 'btn btn-primary'
+    '
+    = link_to "Delete", admin_prop_path(@prop), class: 'btn btn-danger', method: :delete

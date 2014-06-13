@@ -14,6 +14,18 @@ h2 Admin
 
     = link_to "New Chapter", new_admin_chapter_path
 
+    h4 Props
+
+    - if @props.empty?
+      .well None!
+    - else
+      ul
+        - @props.each do |prop|
+          li
+            = link_to prop.name, admin_prop_path(prop)
+
+    = link_to "New Prop", new_admin_prop_path
+
   .col-md-6
     h4 Achievements
 

@@ -6,7 +6,7 @@ preload_app true
 
 case rails_env
 when 'development'
-  listen 3002
+  # listen 3002
   listen "#{`pwd`.strip}/tmp/sockets/#{rails_env}.sock"
 end
 

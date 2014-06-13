@@ -4,5 +4,6 @@ class AdminController < ApplicationController
   def index
     @chapters     = Chapter.all
     @achievements = Achievement.includes(:chapter).order("chapters.name").all
+    @props        = Prop.includes(:chapter).order("chapters.name").all
   end
 end

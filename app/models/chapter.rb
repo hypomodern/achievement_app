@@ -11,6 +11,7 @@ class Chapter < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :achievements, dependent: :destroy
+  has_many :props, dependent: :destroy
 
   default_scope { order(:index) }
 

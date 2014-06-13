@@ -1,17 +1,49 @@
-- @chapters.each do |chapter|
+.row
+  p Achievement status: #{Achievement.where.not(won_at: nil).count} / #{Achievement.count}
+  p Props found: #{Prop.where(found: true).count}
 
-  h4 #{chapter.name}
+.row
+  .col-md-3
+    ul.nav.nav-pills.nav-stacked data-spy="affix" data-offset-top="0"
+      - @chapters.each do |chapter|
+        li = link_to chapter.name, "#chapter-#{chapter.id}"
 
-  table.table.table-striped.table-hover.table-achievements
-    tr
-      th Name
-      th.description Description
-      th.won-by Won By
-      th.admin Admin
+  .col-md-9
+    - @chapters.each do |chapter|
 
-    - chapter.achievements.each do |ach|
-      tr class="#{ach.won_at ? 'success' : ''}"
-        td = ach.name
-        td.description = public_description_for_achievement(ach)
-        td.won-by = ach.won_by
-        td.admin = link_to 'Edit', edit_admin_achievement_path(ach)
+      h4
+        .pull-right
+          #{chapter.achievements.where.not(won_at: nil).count} / #{chapter.achievements.count}
+        #{chapter.name}
+        a.no-link name="chapter-#{chapter.id}"
+
+      table.table.table-striped.table-hover.table-achievements
+        tr
+          th Name
+          th.description Description
+          th.won-by Won By
+
+        - chapter.achievements.each do |ach|
+          tr class="#{ach.won_at ? 'success' : ''}"
+            td = ach.name
+            td.description = public_description_for_achievement(ach)
+            td.won-by = ach.won_by
+
+      - if chapter.props.where(found: true).count > 0
+        h5 Props
+
+        table.table.table-striped.table-hover.table-props
+          tr
+            th Name
+            th Description
+            th Found by
+            th Current owner
+            th Link (right-click, save as)
+
+          - chapter.props.where(found: true).each do |prop|
+            tr
+              td = prop.name
+              td = prop.description
+              td = prop.found_by
+              td = prop.current_owner
+              td = link_to "Download", prop.attached_file.url

@@ -1,0 +1,33 @@
+h2 #{@prop.chapter.name} &ndash; #{@prop.name}
+
+- if @prop.found
+  h4 Found by #{@prop.found_by} (current holder: #{@prop.current_owner})
+
+table.table
+  tr
+    th Description
+    th Link
+  tr
+    td = @prop.description
+    td = link_to(@prop.name, @prop.attached_file.url) if @prop.attached_file
+
+- unless @prop.attached_file?
+  h4 Upload Attachment
+
+  = direct_upload_form_for @uploader, html: { class: 'form-horizontal' } do |f|
+    .form-group
+      = f.label :attached_file, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.file_field :attached_file, class: 'form-control'
+
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.submit 'Upload File', class: 'btn btn-success'
+
+.row
+  .well
+    = link_to "&laquo; Admin".html_safe, admin_path, class: 'btn btn-primary'
+    '
+    = link_to "Edit", edit_admin_prop_path(@prop), class: 'btn btn-warning'
+    '
+    = link_to "Delete", admin_prop_path(@prop), class: 'btn btn-danger', method: :delete
