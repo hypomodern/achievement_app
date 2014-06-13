@@ -1,7 +1,5 @@
 # Add application configuration variables here, as shown below.
 s3_bucket: "achievements-development"
-s3_access_key: "AKIAJXSONRNKKBV53HFA"
-s3_secret: "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"
 
 production:
   s3_bucket: "achievements-production"
