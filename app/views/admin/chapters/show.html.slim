@@ -50,7 +50,7 @@ h3 Props
     tbody
       - @chapter.props.each do |prop|
         tr
-          td = link_to prop.name, edit_admin_prop_path(prop)
+          td = link_to prop.name, admin_prop_path(prop)
           td = link_to "Download link", prop.attached_file.url if prop.attached_file?
           td = prop.found ? prop.found_by : 'No'
           td = prop.current_owner
