@@ -36,10 +36,10 @@
           tr
             th Name
             th Description
-            th Link (right-click, save as)
+            th Link
 
           - chapter.props.where(found: true).each do |prop|
             tr
               td = prop.name
               td = prop.description
-              td = link_to "Download", prop.attached_file.url
+              td = link_to "Download", prop.attached_file.url.gsub("%2520", "+"), target: '_blank'

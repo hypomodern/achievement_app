@@ -50,7 +50,7 @@ h3 Props
       - @chapter.props.each do |prop|
         tr
           td = link_to prop.name, admin_prop_path(prop)
-          td = link_to "Download link", prop.attached_file.url if prop.attached_file?
+          td = link_to "Download link", prop.attached_file.url.gsub("%2520", "+") if prop.attached_file?
           td = prop.found ? 'Yes' : 'No'
           td
             a.btn.btn-default data-toggle="modal" data-target="#prop-modal" data-keyboard="true" href="#{prop_control_admin_prop_path(prop)}" Admin
