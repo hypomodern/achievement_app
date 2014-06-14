@@ -6,8 +6,6 @@
 #  attached_file :string(255)
 #  name          :string(255)
 #  description   :string(255)
-#  current_owner :string(255)
-#  found_by      :string(255)
 #  found         :boolean
 #  chapter_id    :integer
 #  tags          :string(255)      default([]), is an Array

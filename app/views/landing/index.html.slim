@@ -36,14 +36,10 @@
           tr
             th Name
             th Description
-            th Found by
-            th Current owner
             th Link (right-click, save as)
 
           - chapter.props.where(found: true).each do |prop|
             tr
               td = prop.name
               td = prop.description
-              td = prop.found_by
-              td = prop.current_owner
               td = link_to "Download", prop.attached_file.url

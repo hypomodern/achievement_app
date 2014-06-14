@@ -8,9 +8,7 @@ class PropBuilder < SimpleBuilder
     self.object.attributes = {
       name:                 params[:name],
       description:          params[:description],
-      current_owner:        params[:current_owner],
-      found_by:             params[:found_by],
-      found:                !params[:found_by].blank?,
+      found:                params[:found],
       chapter_id:           params[:chapter_id]
     }
   end

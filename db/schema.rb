@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611235049) do
+ActiveRecord::Schema.define(version: 20140614023225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,6 @@ ActiveRecord::Schema.define(version: 20140611235049) do
     t.string   "attached_file"
     t.string   "name"
     t.string   "description"
-    t.string   "current_owner"
-    t.string   "found_by"
     t.boolean  "found"
     t.integer  "chapter_id"
     t.string   "tags",          default: [], array: true
